@@ -1,3 +1,3 @@
 # fastapi-example
 
-Describe your project here.
+fastapi example with rye
