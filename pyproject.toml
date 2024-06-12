@@ -3,13 +3,9 @@ name = "fastapi-example"
 version = "0.1.0"
 description = "Add your description here"
 authors = [
-    { name = "kosuke222naito", email = "kosuke.naito.engineer@gmail.com" }
+    { name = "kosuke222naito", email = "kosuke.naito.engineer@gmail.com" },
 ]
-dependencies = [
-    "fastapi>=0.111.0",
-    "fastapi-cli>=0.0.4",
-    "pydantic>=2.7.3",
-]
+dependencies = ["fastapi>=0.111.0", "fastapi-cli>=0.0.4", "pydantic>=2.7.3"]
 readme = "README.md"
 requires-python = ">= 3.8"
 
@@ -19,10 +15,11 @@ build-backend = "hatchling.build"
 
 [tool.rye]
 managed = true
-dev-dependencies = [
-    "mypy>=1.10.0",
-    "pytest>=8.2.2",
-]
+dev-dependencies = ["mypy>=1.10.0", "pytest>=8.2.2"]
+
+[tool.rye.scripts]
+dev = { cmd = ["fastapi", "dev"] }
+test = { cmd = ["rye", "test"] }
 
 [tool.hatch.metadata]
 allow-direct-references = true
