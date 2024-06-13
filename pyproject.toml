@@ -20,6 +20,11 @@ dev-dependencies = ["mypy>=1.10.0", "pytest>=8.2.2"]
 [tool.rye.scripts]
 dev = { cmd = ["fastapi", "dev"] }
 test = { cmd = ["rye", "test"] }
+gen = { cmd = [
+    "python",
+    "-c",
+    "from main import app;from json import dump;dump(app.openapi(),open('gen/spec.json','w'))",
+] }
 
 [tool.hatch.metadata]
 allow-direct-references = true
